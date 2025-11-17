@@ -24,7 +24,7 @@ jobs :
     - name : "Run Tests"
       run : |
         cd phase-1/tests
-        python -m pytest ./phase-1/tests/test_calculator.py
+        python -m pytest test_calculator.py
     
 
   
