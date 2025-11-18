@@ -4,7 +4,7 @@ on : [push,pull_request]
 
 jobs : 
   phase1_test :
-    runs-on : ubuntu-latest
+    runs-on : self-hosted
 
     strategy:
       matrix:
@@ -20,6 +20,11 @@ jobs :
         python -m pip install --upgrade pip
         cd phase-1
         pip install -r requirements.txt
+    
+    - name : "Linting"
+      run : |
+        cd phase-1/src
+        python -m flake8 main.py
 
     - name : "Run Tests"
       run : |
