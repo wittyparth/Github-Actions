@@ -1,7 +1,6 @@
 import math
 
 import pytest
-
 from src.main import Calculator
 
 
